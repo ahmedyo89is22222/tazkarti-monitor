@@ -11,7 +11,7 @@ CHAT_ID = "7249225351"
 
 seen_matches = set()
 
-first_run = False
+first_run = True
 
 
 def send_telegram_message(message):
@@ -24,6 +24,10 @@ def send_telegram_message(message):
     }
 
     requests.post(url, data=data)
+
+
+# ONLINE MESSAGE
+send_telegram_message("🟢 Tazkarti Monitor ONLINE")
 
 
 while True:
@@ -72,6 +76,13 @@ while True:
     except Exception as e:
 
         print("ERROR:", e)
+
+        # OFFLINE MESSAGE
+        send_telegram_message(
+            f"🔴 Tazkarti Monitor OFFLINE\n\nERROR:\n{e}"
+        )
+
+        break
 
     print("\nStill running...\n")
 
