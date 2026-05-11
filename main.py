@@ -1,25 +1,22 @@
 import requests
 import time
-import os
-
-from plyer import notification
 
 API_URL = "https://www.tazkarti.com/data/matches-list-json.json"
 
 CHECK_EVERY = 20
 
-BOT_TOKEN = "8542294581:AAH2Ee32XIUSu3YBCg-bvp9t04R4jbUKgR8"
+BOT_TOKEN = "حط التوكن هنا"
 
 CHAT_ID = "7249225351"
 
 seen_matches = set()
 
-first_run = False
+first_run = True
 
 
 def send_telegram_message(message):
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot{8542294581:AAH2Ee32XIUSu3YBCg-bvp9t04R4jbUKgR8}/sendMessage"
 
     data = {
         "chat_id": CHAT_ID,
@@ -60,16 +57,6 @@ while True:
 
                     print(f"\nNEW MATCH FOUND: {match_text}")
 
-                    # Notification
-                    notification.notify(
-                        title="NEW MATCH ADDED!",
-                        message=match_text,
-                        timeout=10
-                    )
-
-                    # صوت
-                    print("\a")
-
                     # TELEGRAM MESSAGE
                     send_telegram_message(
                         f"🚨 NEW MATCH ADDED!\n\n{match_text}"
@@ -85,5 +72,7 @@ while True:
     except Exception as e:
 
         print("ERROR:", e)
+
+    print("\nStill running...\n")
 
     time.sleep(CHECK_EVERY)
