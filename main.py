@@ -5,7 +5,7 @@ API_URL = "https://www.tazkarti.com/data/matches-list-json.json"
 
 CHECK_EVERY = 20
 
-BOT_TOKEN = "حط التوكن هنا"
+BOT_TOKEN = "8542294581:AAH2Ee32XIUSu3YBCg-bvp9t04R4jbUKgR8"
 
 CHAT_ID = "7249225351"
 
@@ -16,7 +16,7 @@ first_run = False
 
 def send_telegram_message(message):
 
-    url = f"https://api.telegram.org/bot{8542294581:AAH2Ee32XIUSu3YBCg-bvp9t04R4jbUKgR8}/sendMessage"
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     data = {
         "chat_id": CHAT_ID,
