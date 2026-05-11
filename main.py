@@ -31,8 +31,6 @@ def send_telegram_message(message):
 
 while True:
 
-    os.system("cls")
-
     print("==== AVAILABLE MATCHES ====\n")
 
     try:
