@@ -11,7 +11,7 @@ CHAT_ID = "7249225351"
 
 seen_matches = set()
 
-first_run = True
+first_run = False
 
 
 def send_telegram_message(message):
