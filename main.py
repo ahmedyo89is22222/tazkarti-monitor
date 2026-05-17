@@ -11,7 +11,7 @@ CHAT_ID = "7249225351"
 
 seen_matches = set()
 
-first_run = True
+first_run = False
 
 
 def send_telegram_message(message):
@@ -61,7 +61,6 @@ while True:
 
                     print(f"\nNEW MATCH FOUND: {match_text}")
 
-                    # TELEGRAM MESSAGE
                     send_telegram_message(
                         f"🚨 NEW MATCH ADDED!\n\n{match_text}"
                     )
@@ -73,13 +72,13 @@ while True:
 
         first_run = False
 
-   except Exception as e:
+    except Exception as e:
 
-    print("ERROR:", e)
+        print("ERROR:", e)
 
-    time.sleep(10)
+        time.sleep(10)
 
-    continue
+        continue
 
     print("\nStill running...\n")
 
