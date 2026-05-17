@@ -73,16 +73,13 @@ while True:
 
         first_run = False
 
-    except Exception as e:
+   except Exception as e:
 
-        print("ERROR:", e)
+    print("ERROR:", e)
 
-        # OFFLINE MESSAGE
-        send_telegram_message(
-            f"🔴 Tazkarti Monitor OFFLINE\n\nERROR:\n{e}"
-        )
+    time.sleep(10)
 
-        break
+    continue
 
     print("\nStill running...\n")
 
